@@ -428,33 +428,6 @@ sup {
     margin-left: 10px;
 }
 
-/* .cssecondsection{
-    width: 400px;
-    height: 410px;
-    background-color: #003049;
-} */
-
-
-/* .csname{
-    font-size: 30px;
-    padding-top: 10px;
-    padding-left: 10px;
-    margin-bottom: 5px;
-    font: 900;
-    color: white;
-    background-color: #003049;
-} */
-
-
-/* .csmanyimgg{
-    display: flex;
-    width: 400px;
-    justify-content: space-evenly;
-    margin-top: 10px;
-} */
-
-
-
 .csthirdsection{
     width: 300px;
     height: fit-content;
@@ -471,7 +444,9 @@ sup {
 .featurelogos{
     border: 2px solid white;
     padding: 5px;
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 .fa-user-group {
