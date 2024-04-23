@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
             align-items: center;
             height: 100vh;
         }
+
         .signup-container {
             background-color: #fff;
             padding: 20px;
@@ -23,9 +25,11 @@
             width: 300px;
             text-align: center;
         }
+
         .signup-container h2 {
             margin-bottom: 20px;
         }
+
         .signup-container input[type="text"],
         .signup-container input[type="password"],
         .signup-container input[type="date"],
@@ -37,6 +41,7 @@
             border-radius: 3px;
             box-sizing: border-box;
         }
+
         .signup-container input[type="submit"] {
             width: 100%;
             background-color: #007bff;
@@ -46,23 +51,27 @@
             cursor: pointer;
             border-radius: 3px;
         }
+
         .signup-container input[type="submit"]:hover {
             background-color: #0056b3;
         }
+
         .error-message {
             color: red;
             margin-top: 5px;
             font-size: 14px;
         }
+
         .download-button {
             margin-top: 20px;
         }
     </style>
 </head>
+
 <body>
     <div class="signup-container">
         <h2>Sign Up for VPM</h2>
-        <form id="signupForm" action="signup_handler.php" method="post" onsubmit="return validateForm()">
+        <form id="signupForm" method="post" onsubmit="return validateForm()">
             <input type="text" id="name" name="name" placeholder="Name" required>
             <input type="password" id="password" name="password" placeholder="Password" required>
             <input type="date" id="dob" name="dob" required>
@@ -70,41 +79,33 @@
             <input type="submit" value="Sign Up">
             <div id="error-message" class="error-message"></div>
         </form>
-        
     </div>
 
     <script>
         function validateForm() {
-            var name = document.getElementById("name").value;
-            var password = document.getElementById("password").value;
-            var dob = document.getElementById("dob").value;
-            var email = document.getElementById("email").value;
-            var errorMessage = document.getElementById("error-message");
+            var name = document.getElementById('name').value;
+            var password = document.getElementById('password').value;
+            var errorMessage = document.getElementById('error-message');
 
-            if (name.trim() === "") {
-                errorMessage.textContent = "Please enter your name.";
-                return false;
+            if (name.trim() === '' || password.trim() === '') {
+                errorMessage.textContent = 'Please fill out both name and password fields.';
+                return false; 
+            } else if (name.length < 5) {
+                errorMessage.textContent = 'Name must be at least 5 characters long.';
+                return false; 
+            } else if (password.length < 8) {
+                errorMessage.textContent = 'Password must be at least 8 characters long.';
+                return false; 
+            } else {
+                errorMessage.textContent = '';
+                alert('Form submitted!');
+                setTimeout(function () {
+                    location.reload(); 
+                }, 1000); 
+                return true; 
             }
-            if (password.trim() === "") {
-                errorMessage.textContent = "Please enter a password.";
-                return false;
-            }
-            if (dob.trim() === "") {
-                errorMessage.textContent = "Please enter your date of birth.";
-                return false;
-            }
-            if (email.trim() === "") {
-                errorMessage.textContent = "Please enter your email address.";
-                return false;
-            }
-            // You can add additional validation here, such as checking email format
-            
-            // Clear any previous error message
-            errorMessage.textContent = "";
-
-            // If all validations pass, return true to submit the form
-            return true;
         }
     </script>
 </body>
+
 </html>

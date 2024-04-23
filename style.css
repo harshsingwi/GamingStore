@@ -561,3 +561,11 @@ sup {
 #spacing{
     margin-top: 10px;
 }
+
+.arrow{
+    font-size: xx-large;
+    background-color: #a2d2ff;
+    margin-top: 225px;
+    border: 2px solid;
+    height: fit-content;
+}
